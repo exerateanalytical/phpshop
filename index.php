@@ -8,9 +8,9 @@ $isDemoMode = $pdo === null;
 
 if ($isDemoMode) {
     $pages = [
-        ['title' => 'Pain Relief Essentials', 'hero_text' => 'Fast and trusted pain relief products', 'slug' => '#'],
-        ['title' => 'Cold & Flu Care', 'hero_text' => 'Stay strong through the season', 'slug' => '#'],
-        ['title' => 'Digestive Wellness', 'hero_text' => 'Healthy gut, healthy life', 'slug' => '#'],
+        ['title' => 'Pain Relief Essentials', 'hero_text' => 'Fast and trusted pain relief products', 'slug' => 'pain-relief-essentials'],
+        ['title' => 'Cold & Flu Care', 'hero_text' => 'Stay strong through the season', 'slug' => 'cold-flu-care'],
+        ['title' => 'Digestive Wellness', 'hero_text' => 'Healthy gut, healthy life', 'slug' => 'digestive-wellness'],
     ];
 } else {
     $pages = $pdo->query('SELECT * FROM landing_pages WHERE is_active = 1 ORDER BY id ASC')->fetchAll();
@@ -31,11 +31,7 @@ include __DIR__ . '/includes/layout.php';
         <div class="card">
             <h3><?= e($page['title']) ?></h3>
             <p><?= e($page['hero_text']) ?></p>
-            <?php if ($isDemoMode): ?>
-                <button class="btn secondary" type="button" disabled>Open Page</button>
-            <?php else: ?>
-                <a class="btn" href="landing.php?slug=<?= urlencode($page['slug']) ?>">Open Page</a>
-            <?php endif; ?>
+            <a class="btn" href="landing.php?slug=<?= urlencode($page['slug']) ?>">Open Page</a>
         </div>
     <?php endforeach; ?>
 </div>

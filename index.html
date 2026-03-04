@@ -4,23 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>PharmaShop Preview Entry</title>
-  <meta http-equiv="refresh" content="0; url=index.php">
   <style>
-    body{font-family:Arial,sans-serif;background:#f5f7fb;color:#222;padding:30px}
-    .box{max-width:760px;margin:auto;background:#fff;border:1px solid #ddd;border-radius:10px;padding:20px}
-    a.btn{display:inline-block;padding:10px 14px;background:#0c4a6e;color:#fff;text-decoration:none;border-radius:6px}
+    body{font-family:Arial,sans-serif;background:#f5f7fb;color:#222;padding:24px}
+    .box{max-width:860px;margin:auto;background:#fff;border:1px solid #ddd;border-radius:10px;padding:22px}
+    .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-top:14px}
+    .card{border:1px solid #ddd;border-radius:8px;padding:12px}
+    a.btn{display:inline-block;padding:10px 14px;background:#0c4a6e;color:#fff;text-decoration:none;border-radius:6px;margin-right:8px}
+    a.btn.secondary{background:#475569}
     code{background:#eee;padding:2px 4px}
+    .muted{color:#666}
   </style>
 </head>
 <body>
   <div class="box">
     <h1>PharmaShop Preview</h1>
-    <p>Redirecting to <code>index.php</code>…</p>
-    <p>If your preview environment does not execute PHP, this page still gives you a stable entry point.</p>
+    <p>This entry page always renders (even on static preview hosts). If PHP is enabled, use the buttons below to open the full application.</p>
     <p>
-      <a class="btn" href="index.php">Open PHP App</a>
-      <a class="btn" href="README.md" style="background:#475569">Open README</a>
+      <a class="btn" href="index.php">Open Storefront</a>
+      <a class="btn" href="products.php">Open Products</a>
+      <a class="btn secondary" href="README.md">Open Setup Guide</a>
     </p>
+
+    <h3>Landing page concepts</h3>
+    <p class="muted">These are preview cards so you can validate display even before PHP/MySQL runtime is available.</p>
+    <div class="grid">
+      <div class="card"><strong>Pain Relief Essentials</strong><p class="muted">Fast and trusted pain relief products.</p></div>
+      <div class="card"><strong>Cold & Flu Care</strong><p class="muted">Stay strong through the season.</p></div>
+      <div class="card"><strong>Digestive Wellness</strong><p class="muted">Healthy gut, healthy life.</p></div>
+    </div>
+
+    <p class="muted" style="margin-top:14px">If you still see “Not Found”, run from project root with <code>php -S 0.0.0.0:8000 router.php</code>.</p>
   </div>
 </body>
 </html>

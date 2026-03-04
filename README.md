@@ -57,4 +57,4 @@ Production-oriented pharmacy/drugstore e-commerce starter built with plain PHP +
 
 - If DB is unavailable, homepage, landing pages, and products now render in limited preview mode (HTTP 200) so screenshots/checks still work.
 
-- Added `index.html` as a universal preview entry point (auto-redirects to `index.php`) for environments that probe static root first.
+- Added `index.html` as a universal preview entry point that renders standalone content and provides manual links to PHP pages.

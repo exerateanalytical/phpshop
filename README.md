@@ -56,3 +56,5 @@ Production-oriented pharmacy/drugstore e-commerce starter built with plain PHP +
 - If you get "Not Found" in preview, make sure you started the server from the project root with `php -S 0.0.0.0:8000 router.php`.
 
 - If DB is unavailable, homepage, landing pages, and products now render in limited preview mode (HTTP 200) so screenshots/checks still work.
+
+- Added `index.html` as a universal preview entry point (auto-redirects to `index.php`) for environments that probe static root first.
